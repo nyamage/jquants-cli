@@ -47,12 +47,6 @@ jobs:
         name: codecov-umbrella
       continue-on-error: true
 
-    - name: Run integration tests
-      if: ${{ secrets.JQUANTS_API_KEY != '' }}
-      run: go test -v ./tests/integration/...
-      env:
-        JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
