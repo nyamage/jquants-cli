@@ -9,10 +9,14 @@ import (
 )
 
 func TestLoad(t *testing.T) {
+	// 元のHOME環境変数を保存
+	originalHome := os.Getenv("HOME")
+
 	// テスト後のクリーンアップ
 	defer func() {
 		viper.Reset()
 		os.Unsetenv("JQUANTS_API_KEY")
+		os.Setenv("HOME", originalHome)
 	}()
 
 	tests := []struct {
@@ -56,8 +60,12 @@ func TestLoad(t *testing.T) {
 			expectError: false,
 		},
 		{
-			name:        "設定ファイルがない場合",
-			setupEnv:    nil,
+			name: "設定ファイルがない場合",
+			setupEnv: func() {
+				// ホームディレクトリを存在しないディレクトリに変更
+				// これにより、実際の設定ファイルが読み込まれることを防ぐ
+				os.Setenv("HOME", "/tmp/nonexistent-jquants-test-home")
+			},
 			setupFile:   nil,
 			expectedKey: "",
 			expectError: false,
@@ -71,6 +79,8 @@ func TestLoad(t *testing.T) {
 
 			// 環境変数をクリア
 			os.Unsetenv("JQUANTS_API_KEY")
+			// HOMEを元に戻す（各テストケースで独立させる）
+			os.Setenv("HOME", originalHome)
 
 			// テストのセットアップ
 			if tt.setupEnv != nil {
