@@ -1,0 +1,35 @@
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  # Use only formatting linters to avoid typecheck compatibility issues
+  enable:
+    - gofmt
+    - goimports
+    - errcheck
+    - gosimple
+    - ineffassign
+    - unused
+
+  disable-all: false
+
+linters-settings:
+  gofmt:
+    simplify: true
+
+  goimports:
+    local-prefixes: github.com/nyamage/jquants-cli
+
+issues:
+  # Exclude typecheck errors due to golangci-lint version compatibility
+  exclude-rules:
+    - linters:
+        - typecheck
+      text: ".*"
+
+  exclude-dirs:
+    - vendor
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
