@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "Date": "2025-03-14",
+      "Code": "86970",
+      "CoName": "日本取引所グループ",
+      "CoNameEn": "Japan Exchange Group,Inc.",
+      "S17": "16",
+      "S17Nm": "金融（除く銀行）",
+      "S33": "7200",
+      "S33Nm": "その他金融業",
+      "ScaleCat": "TOPIX Large70",
+      "Mkt": "0111",
+      "MktNm": "プライム",
+      "Mrgn": "1",
+      "MrgnNm": "信用"
+    },
+    {
+      "Date": "2025-03-14",
+      "Code": "27890",
+      "CoName": "カーブスホールディングス",
+      "CoNameEn": "CURVES HOLDINGS CO.,LTD.",
+      "S17": "6",
+      "S17Nm": "小売業",
+      "S33": "6100",
+      "S33Nm": "小売業",
+      "ScaleCat": "TOPIX Mid400",
+      "Mkt": "0111",
+      "MktNm": "プライム",
+      "Mrgn": "1",
+      "MrgnNm": "信用"
+    },
+    {
+      "Date": "2025-03-14",
+      "Code": "72030",
+      "CoName": "トヨタ自動車",
+      "CoNameEn": "TOYOTA MOTOR CORPORATION",
+      "S17": "7",
+      "S17Nm": "輸送用機器",
+      "S33": "3050",
+      "S33Nm": "輸送用機器",
+      "ScaleCat": "TOPIX Large70",
+      "Mkt": "0111",
+      "MktNm": "プライム",
+      "Mrgn": "1",
+      "MrgnNm": "信用"
+    }
+  ]
+}
